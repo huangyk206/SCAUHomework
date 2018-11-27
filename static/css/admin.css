@@ -1,0 +1,13 @@
+/** layuiAdmin.std-v1.2.1 LPPL License By http://www.layui.com/admin/ */
+
+::-webkit-input-placeholder {
+    color: #ccc
+}
+
+.layadmin-link {
+    color: #029789 !important
+}
+
+.layadmin-link:hover {
+    opacity: .8
+}

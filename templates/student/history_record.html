@@ -1,0 +1,133 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>SCAU 作业管理系统</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+<body class="layui-bg-gray">
+<!--------------------------------------导航栏开始------------------------------------------->
+<div style="position: fixed;left: 0px;right: 0px;z-index: 9999">
+    <div class="layui-bg-black" style="min-height: 60px;padding-left: 90px">
+        <div style="width: 200px;height: 100%;line-height: 60px;text-align: center;color: #009688;font-size: 20px;font-family: Cambria">
+            <strong>SCAU</strong> 作业提交系统
+        </div>
+    </div>
+    <ul class="layui-nav layui-layout-left" lay-filter="layui-header-left" style="left: 305px;right: 0px">
+        <li class="layui-nav-item ">
+            <a href="main.html">主页</a>
+        </li>
+        <li class="layui-nav-item ">
+            <a href="homework_list.html">课程作业</a>
+        </li>
+        <li class="layui-nav-item ">
+            <a href="course_resourse.html">课程资源</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html">关于</a>
+        </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right" layui-filter="layui-header-right" style="padding-right: 50px;">
+        <li class="layui-nav-item">
+            <a href="person_center.html">
+                <img src="../../static/image/login.jpg" class="layui-nav-img">
+                huangyk
+            </a>
+            <dl class="layui-nav-child">
+                <dd><a href="person_center.html">个人中心</a></dd>
+                <dd><a href="update_password.html">修改密码</a></dd>
+                <dd><a href="history_record.html">历史记录</a></dd>
+                <dd><a href="javascript:;">退出</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--------------------------------------导航栏结束------------------------------------------->
+<div style="position: relative;top:80px;margin-left: 100px;margin-right: 100px">
+    <div style="margin:0 50px 0 50px;padding:10px 20px 10px 20px;min-height: 550px">
+        <!----------------------------------左侧菜单栏开始----------------------------------------->
+        <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user"
+            style="min-height: 600px;position: absolute;padding-top: 20px">
+            <li class="layui-nav-item "><a href="person_center.html"> <i class="layui-icon">&#xe612;</i> 个人中心 </a></li>
+            <li class="layui-nav-item "><a href="update_password.html"> <i class="layui-icon">&#xe673;</i> 修改密码 </a>
+            </li>
+            <li class="layui-nav-item layui-this"><a href="history_record.html"> <i class="layui-icon">&#xe60a;</i> 历史记录
+            </a></li>
+        </ul>
+        <!----------------------------------左侧菜单栏结束----------------------------------------->
+
+        <!----------------------------------右侧开始----------------------------------------->
+        <div style="margin-left:215px;min-height: 590px;min-width: 650px;background-color: white;padding-top: 10px">
+            <div class="layui-tab layui-tab-brief" lay-filter="">
+                <ul class="layui-tab-title">
+                    <li class="layui-this">已提交</li>
+                    <li>逾期未交</li>
+                </ul>
+                <div class="layui-tab-content">
+                    <div class="layui-tab-item layui-show">
+                        <table class="layui-table"  lay-data="{url:'',id:'submit-list',page:true,data:[{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',submitTime:'2018-11-11 11:11:11'}]}" lay-filter="submit-list">
+                            <thead>
+                            <tr>
+                                <th lay-data="{field:'course',align:'center'}">课程名称</th>
+                                <th lay-data="{field:'title',align:'center'}">作业题目</th>
+                                <th lay-data="{field:'submitTime',align:'center'}">提交时间</th>
+                                <th lay-data="{align:'center',toolbar: '#operationBar1'}">操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="layui-tab-item ">
+                        <table class="layui-table"  lay-data="{url:'',id:'overtime-list',page:true,data:[{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'},{course:'计算机网络',title:'实验一',deadline:'2018-11-11 11:11:11'}]}" lay-filter="overtime-list">
+                            <thead>
+                            <tr>
+                                <th lay-data="{field:'course',align:'center'}">课程名称</th>
+                                <th lay-data="{field:'title',align:'center'}">作业题目</th>
+                                <th lay-data="{field:'deadline',align:'center'}">截止时间</th>
+                                <th lay-data="{align:'center',toolbar: '#operationBar2'}">操作</th>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------------------------右侧结束----------------------------------------->
+
+
+<script type="text/html" id="operationBar1">
+    <a class="layui-btn  layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+    <a class="layui-btn layui-btn-xs" lay-event="download">下载</a>
+</script>
+
+<script type="text/html" id="operationBar2">
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">查看</a>
+</script>
+
+<script src="../../static/layui/layui.js"></script>
+<script>
+    layui.use(['element', 'form', 'jquery', 'upload','table'], function () {
+        var form = layui.form,
+            $ = layui.jquery,
+            table=layui.table;
+
+        table.on('tool(submit-list)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'detail') {//点击查看
+                window.location.href='homework_info.html';
+            } else if (obj.event === 'download') {//点击下载
+
+            }
+        });
+
+        table.on('tool(overtime-list)',function (obj) {
+            if(obj.event==='detail'){
+                window.location.href="homework_info.html"
+            }
+        });
+
+    });
+</script>
+</body>
+</html>

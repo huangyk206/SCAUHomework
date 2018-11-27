@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>作业管理系统</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+<body class="layui-bg-gray">
+<!--------------------------------------导航栏开始------------------------------------------->
+<div style="position: fixed;left: 0px;right: 0px;z-index: 9999">
+    <div class="layui-bg-black" style="min-height: 60px;padding-left: 90px">
+        <div style="width: 200px;height: 100%;line-height: 60px;text-align: center;color: #009688;font-size: 20px;font-family: Cambria">
+            <strong>SCAU</strong> 作业提交系统
+        </div>
+    </div>
+    <ul class="layui-nav layui-layout-left" lay-filter="layui-header-left" style="left: 305px;right: 0px">
+        <li class="layui-nav-item ">
+            <a href="main.html">主页</a>
+        </li>
+        <li class="layui-nav-item layui-this">
+            <a href="homework_list.html">课程作业</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="course_resourse.html">课程资源</a>
+        </li>
+        <li class="layui-nav-item">
+            <a href="about.html">关于</a>
+        </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right" layui-filter="layui-header-right" style="padding-right: 50px;">
+        <li class="layui-nav-item">
+            <a href="person_center.html">
+                <img src="../../static/image/login.jpg" class="layui-nav-img">
+                huangyk
+            </a>
+            <dl class="layui-nav-child">
+                <dd><a href="person_center.html">个人中心</a></dd>
+                <dd><a href="update_password.html">修改密码</a></dd>
+                <dd><a href="history_record.html">历史记录</a></dd>
+                <dd><a href="javascript:;">退出</a></dd>
+            </dl>
+        </li>
+    </ul>
+</div>
+<!--------------------------------------导航栏结束------------------------------------------->
+
+<!--------------------------------------主体开始------------------------------------------->
+<div style="position: relative;top:80px;margin-left: 100px;margin-right: 100px">
+    <div style="margin:0 50px 0 50px;padding:10px 20px 10px 20px;background-color: white;min-height: 550px">
+        <a href="javascript:history.back(-1)" style="font-size: 16px;color:blue;"><i
+                class="layui-icon">&#xe65c;</i>返回</a>
+        <hr class="layui-bg-gray">
+        <div class="layui-form">
+            <div class="layui-form-item ">
+                <label class="layui-form-label"><strong>题目名称</strong></label>
+                <div class="layui-input-inline">
+                    <input type="text" name='title' id='title' class="layui-input" disabled value="java多线程"
+                           style="border: white;width:500px;">
+                </div>
+            </div>
+            <hr class="layui-bg-gray">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><strong>截止时间</strong></label>
+                <div class="layui-input-inline">
+                    <input type="text" name="deadline" id="deadline" class="layui-input" disabled
+                           value="2018-11-24 12:12:12" style="border: white;width:500px;">
+                </div>
+            </div>
+            <hr class="layui-bg-gray">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><strong>提交备注</strong></label>
+                <div class="layui-input-inline">
+                    <textarea name="note" id="note" class="layui-textarea"
+                              style="width: 500px;height: 200px"></textarea>
+                </div>
+            </div>
+            <hr class="layui-bg-gray">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><strong>作业附件</strong></label>
+                <div class="layui-input-inline">
+                    <button type="button" name="file" id="file" class="layui-btn" style="width: 190px">
+                        <i class="layui-icon">&#xe67c;</i>上传附件
+                    </button>
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    文件不得超过2M
+                </div>
+            </div>
+            <hr class="layui-bg-gray">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><strong>作业状态</strong></label>
+                <div class="layui-input-inline">
+                    <input type="text" name="state" id="state" class="layui-input" disabled value="未提交"
+                           style="border: white;">
+                </div>
+            </div>
+            <!--<hr class="layui-bg-gray">-->
+            <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label"><strong>教师评分</strong></label>-->
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="text" name="score" id="score" class="layui-input" disabled value="A+" style="border: white;">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<hr class="layui-bg-gray">-->
+            <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label"><strong>教师评语</strong></label>-->
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="text" name="remark" id="remark" class="layui-input" disabled value="Good" style="border: white;width: 500px">-->
+            <!--</div>-->
+            <!--</div>-->
+            <hr class="layui-bg-gray">
+            <div class="layui-form-item" style="text-align: center">
+                <button class="layui-btn" submit lay-filter="*">确认提交</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--------------------------------------主体结束------------------------------------------->
+
+
+
+<script src="../../static/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['jquery', 'form', 'upload'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            upload = layui.upload;
+
+        //获取作业信息
+        $.ajax({
+            url: '',
+            data: {},
+            type: 'get',
+            success: function (res) {
+                if (res.status == 200) {
+                    $('#title').text(res.title);
+                    $('#deadline').text(res.deadline);
+                }
+            }
+        });
+
+        //上传附件
+        upload.render({
+            elem: '#file',
+            url: '',
+            done: function (res) {
+
+            },
+            error: function () {
+
+            }
+        });
+
+        //提交作业
+        form.on('submit(*)', function (data) {
+            $, ajax({
+                url: '',
+                data: {},
+                type: 'post',
+                success: function (res) {
+
+                }
+            })
+        })
+
+    });
+</script>
+</body>
+</html>
