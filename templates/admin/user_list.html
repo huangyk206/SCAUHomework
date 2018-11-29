@@ -1,0 +1,102 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>作业管理系统</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+<body>
+<div style="margin: 10px;">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">账号</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" name="account" id="account">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">姓名</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" name="name" id="name">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-inline">
+                    <select class="layui-select" name="sex" id="sex">
+                        <option value="0">不限</option>
+                        <option value="1">男</option>
+                        <option value="2">女</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn" lay-submit lay-filter="user-search">
+                    <i class="layui-icon layui-icon-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <button class="layui-btn" data-type="delete">删除</button>
+        <button class="layui-btn" data-type="add">添加</button>
+    </div>
+    <table class="layui-table"
+           lay-data="{url:'',id:'user-list',page:true,data:[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]}"
+           lay-filter="user-list">
+        <thead>
+        <tr>
+            <th lay-data="{type:'checkbox'}"></th>
+            <th lay-data="{field:'account',align:'center'}">账号</th>
+            <th lay-data="{field:'name',align:'center'}">性名</th>
+            <th lay-data="{field:'nickname',align:'center'}">昵称</th>
+            <th lay-data="{field:'sex',align:'center'}">性别</th>
+            <th lay-data="{field:'phone',align:'center'}">手机</th>
+            <th lay-data="{field:'email',align:'center'}">邮箱</th>
+            <th lay-data="{field:'createTime',align:'center'}">加入时间</th>
+            <th lay-data="{align:'center',toolbar:'#operationBar'}">操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<script type="text/html" id="operationBar">
+    <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit">编辑</button>
+    <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</button>
+</script>
+<script src="../../static/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['jquery', 'element', 'form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        form.on('submit(user-search)', function (data) {
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: data.field,
+                success: function (res) {
+
+                }
+            })
+        });
+
+        table.on('tool(user-list)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+
+            } else if (obj.even === 'delete') {
+
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>

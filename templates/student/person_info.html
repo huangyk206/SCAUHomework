@@ -29,15 +29,16 @@
     </ul>
     <ul class="layui-nav layui-layout-right" layui-filter="layui-header-right" style="padding-right: 50px;">
         <li class="layui-nav-item">
-            <a href="person_center.html">
+            <a href="person_info.html">
                 <img src="../../static/image/login.jpg" class="layui-nav-img">
                 huangyk
             </a>
-            <dl class="layui-nav-child">
-                <dd><a href="person_center.html">个人中心</a></dd>
+            <dl class="layui-nav-child" style="text-align: center">
+                <dd><a href="person_info.html">个人中心</a></dd>
                 <dd><a href="update_password.html">修改密码</a></dd>
-                <dd><a href="history_record.html">历史记录</a> </dd>
-                <dd><a href="javascript:;">退出</a> </dd>
+                <dd><a href="history_record.html">历史记录</a></dd>
+                <hr>
+                <dd><a href="javascript:;">退出</a></dd>
             </dl>
         </li>
     </ul>
@@ -47,7 +48,8 @@
     <div style="margin:0 50px 0 50px;padding:10px 20px 10px 20px;min-height: 550px">
     <!----------------------------------左侧菜单栏开始----------------------------------------->
     <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" style="min-height: 600px;position: absolute;padding-top: 20px">
-        <li class="layui-nav-item layui-this " ><a href="person_center.html"> <i class="layui-icon">&#xe612;</i> 个人中心 </a></li>
+        <li class="layui-nav-item layui-this "><a href="person_info.html"> <i class="layui-icon">&#xe612;</i> 个人中心 </a>
+        </li>
         <li class="layui-nav-item "><a href="update_password.html"> <i class="layui-icon">&#xe673;</i> 修改密码 </a></li>
         <li class="layui-nav-item "><a href="history_record.html"> <i class="layui-icon">&#xe60a;</i> 历史记录 </a></li>
     </ul>
@@ -74,7 +76,16 @@
                         <div class="layui-input-inline">
                             <input type="text" name="name" id="name" required class="layui-input" disabled value="huangyk" style="cursor: not-allowed !important;">
                         </div>
+                        <input type="radio" name="sex" id="male" value="男" title="男">
+                        <input type="radio" name="sex" id="female" value="女" title="女">
                     </div>
+                    <!--<div class="layui-form-item">-->
+                    <!--<label class="layui-form-label">性别</label>-->
+                    <!--<div class="layui-input-block">-->
+                    <!--<input type="radio" name="sex" id="male" value="男" title="男">-->
+                    <!--<input type="radio" name="sex" id="female" value="女" title="女">-->
+                    <!--</div>-->
+                    <!--</div>-->
                     <div class="layui-form-item">
                         <label class="layui-form-label">昵称</label>
                         <div class="layui-input-inline">

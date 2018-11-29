@@ -1,0 +1,84 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>作业管理系统</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+<body>
+<div>
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <label class="layui-form-label">角色</label>
+            <div class="layui-input-inline">
+                <input type="text" name="role" id="role" class="layui-input" disabled value="管理员">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="account" id="account" class="layui-input" disabled value="admin">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">姓名</label>
+            <div class="layui-input-inline">
+                <input type="text" name="name" id="nanme" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">昵称</label>
+            <div class="layui-input-inline">
+                <input type="text" name="nickname" id="nickname" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">性别</label>
+            <div class="layui-input-inline">
+                <input type="radio" name="sex" id="male" value="男" title="男">
+                <input type="radio" name="sex" id="female" value="女" title="女">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">手机</label>
+            <div class="layui-input-inline">
+                <input type="text" name="phone" id="phone" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">邮箱</label>
+            <div class="layui-input-inline">
+                <input type="text" name="email" id="email" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="button" class="layui-btn" lay-submit lay-filter="user-info-submit">确认修改</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重新填写</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../../static/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['jquery', 'element', 'form'], function () {
+        var $ = layui.jquery,
+            form = layui.form;
+
+        form.on('submit(user-pass-submit)', function (data) {
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: data.field,
+                success: function (res) {
+
+                }
+            })
+        })
+
+    });
+
+</script>
+</body>
+</html>
