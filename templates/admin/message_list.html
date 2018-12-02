@@ -1,0 +1,96 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>作业管理系统</title>
+    <link rel="stylesheet" href="../../static/layui/css/layui.css">
+</head>
+<body>
+<div style="margin: 10px;">
+    <div class="layui-form">
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">消息状态</label>
+                <div class="layui-input-block" style="min-width: 240px">
+                    <select class="layui-select" name="status" id="status">
+                        <option value="0">所有</option>
+                        <option value="1">已读</option>
+                        <option value="2">未读</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button class="layui-btn" lay-submit lay-filter="notice-search">
+                    <i class="layui-icon layui-icon-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <div class="layui-btn-group">
+            <button class="layui-btn layui-btn-danger layui-btn-sm" data-type="delete" style="min-width: 90px"><i
+                    class="layui-icon">&#xe640;</i>删除
+            </button>
+            <button class="layui-btn layui-btn-warm layui-btn-sm" data-type="download" style="min-width: 90px"><i
+                    class="layui-icon">&#xe67b;</i>标记已读
+            </button>
+        </div>
+    </div>
+    <table class="layui-table"
+           lay-data="{url:'',id:'user-list',page:true,data:[{},{},{},{},{},{},{},{},{},{},{},{},{},{},{}]}"
+           lay-filter="role-list">
+        <thead>
+        <tr>
+            <th lay-data="{type:'checkbox'}"></th>
+            <th lay-data="{field:'title',align:'center'}">消息标题</th>
+            <th lay-data="{field:'account',align:'center'}">发送者账号</th>
+            <th lay-data="{field:'name',align:'center'}">发送者姓名</th>
+            <th lay-data="{field:'createTime',align:'center'}">创建时间</th>
+            <th lay-data="{field:'status',align:'center'}">状态</th>
+            <th lay-data="{align:'center',toolbar:'#operationBar'}">操作</th>
+        </tr>
+        </thead>
+    </table>
+</div>
+<script type="text/html" id="operationBar">
+    <button class="layui-btn layui-btn-normal layui-btn-xs" lay-event="detail"><i class="layui-icon">&#xe64c;</i>查看
+    </button>
+    <button class="layui-btn layui-btn-warm layui-btn-xs" lay-event="readed   "><i class="layui-icon">&#xe67b;</i>已读
+    </button>
+    <button class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete"><i class="layui-icon">&#xe640;</i>删除
+    </button>
+</script>
+<script src="../../static/layui/layui.js"></script>
+<script>
+    //JavaScript代码区域
+    layui.use(['jquery', 'element', 'form', 'table'], function () {
+        var $ = layui.jquery,
+            form = layui.form,
+            table = layui.table;
+
+        form.on('submit(notice-search)', function (data) {
+            $.ajax({
+                url: '',
+                type: 'post',
+                data: data.field,
+                success: function (res) {
+
+                }
+            })
+        });
+
+        table.on('tool(notice-list)', function (obj) {
+            var data = obj.data;
+            if (obj.event === 'edit') {
+
+            } else if (obj.even === 'delete') {
+
+            }
+        });
+
+    });
+
+</script>
+</body>
+</html>
