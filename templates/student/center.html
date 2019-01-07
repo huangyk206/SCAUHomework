@@ -2,23 +2,102 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>作业管理系统</title>
+    <title>SCAU 作业管理系统</title>
     <link rel="stylesheet" href="../../static/layui/css/layui.css">
 </head>
-<body>
-<div >
-    <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" style="min-height: 600px;position: absolute;padding-top: 20px">
-        <li class="layui-nav-item" ><a href=""> <i class="layui-icon">&#xe612;</i> 个人中心 </a></li>
-        <li class="layui-nav-item layui-this"><a href=""> <i class="layui-icon">&#xe60a;</i> 历史记录 </a></li>
-        <li class="layui-nav-item "><a href=""> <i class="layui-icon">&#xe611;</i> 课程通知 </a></li>
-    </ul>
-    <div style="margin-left:215px;min-height: 590px;background-color: white;padding-top: 10px">
+<body class="layui-bg-gray">
 
+<div style="margin:0 50px 0 50px;padding:10px 20px 10px 20px;min-height: 550px">
+    <!----------------------------------左侧菜单栏开始----------------------------------------->
+    <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" style="min-height: 600px;position: absolute;padding-top: 20px">
+        <li class="layui-nav-item "><a href="person_info.html" target="right" id="nav_item_center"> <i
+                class="layui-icon">&#xe612;</i> 个人中心 </a></li>
+        <li class="layui-nav-item "><a href="update_password.html" target="right" id="nav_item_pass"> <i
+                class="layui-icon">&#xe673;</i> 修改密码 </a></li>
+        <li class="layui-nav-item "><a href="history_record.html" target="right" id="nav_item_history"> <i
+                class="layui-icon">&#xe60a;</i> 历史记录 </a></li>
+    </ul>
+    <!----------------------------------左侧菜单栏结束----------------------------------------->
+
+    <!----------------------------------右侧开始----------------------------------------->
+    <div>
+        <iframe id="right" name="right" src="person_info.html" frameborder="0" scrolling="yes"
+                style="width: 100%;height: 100%"></iframe>
     </div>
 </div>
+</div>
+<!----------------------------------右侧结束----------------------------------------->
 <script src="../../static/layui/layui.js"></script>
 <script>
+    layui.use(['element', 'form', 'jquery', 'upload'], function () {
+        var form = layui.form,
+            $ = layui.jquery;
+        upload = layui.upload;
+        var url = location.search;
+        if (url.indexOf("?") != -1) {
+            var strs = url.substr(1).split("&");
+            for (var i = 0; i < strs.length; i++) {
+                if (strs[i].indexOf("id=") == 0) {
+                    var id = strs[i].substr(3);
+                    if (id == 1) {
+                        $("#nav_item_center").addClass("layui-this");
+                        $("#right").attr("src", "person_info.html");
+                    } else if (id == 2) {
+                        $("#nav_item_pass").addClass("layui-this");
+                        $("#right").attr("src", "update_password.html");
+                    } else if (id == 3) {
+                        $("#nav_item_history").addClass("layui-this");
+                        $("#right").attr("src", "history_record.html");
+                    }
+                }
+            }
+        }
 
+        $("#nav_item_center").click(function () {
+            $("#nav_item_center").addClass("layui-this");
+        });
+        $("#nav_item_pass").click(function () {
+            $("#nav_item_pass").addClass("layui-this");
+        });
+        $("#nav_item_history").click(function () {
+            $("#nav_item_history").addClass("layui-this");
+        });
+
+        //修改个人信息
+        form.on('submit(user-msg-submit)', function (data) {
+            $.ajax({
+                url: '',
+                data: data.field,
+                type: 'post',
+                success: function (res) {
+
+                }
+            });
+        });
+
+        //上传头像
+        upload.render({
+            elem: '#load-img',
+            url: '',
+            done: function (res) {
+
+            },
+            error: function () {
+
+            }
+        })
+        //修改密码
+        form.on('submit(user-pass-submit', function (data) {
+            $.ajax({
+                url: '',
+                data: data.field,
+                type: 'post',
+                success: function (res) {
+
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>

@@ -37,8 +37,8 @@
                     管理员
                 </a>
                 <dl class="layui-nav-child" style="text-align: center">
-                    <dd><a href="">基本资料</a></dd>
-                    <dd><a href="">修改密码</a></dd>
+                    <dd><a href="person_info.html" target="body">基本资料</a></dd>
+                    <dd><a href="update_password.html" target="body">修改密码</a></dd>
                     <hr>
                     <dd><a href="">退出</a></dd>
                 </dl>
@@ -56,8 +56,8 @@
                         个人中心
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">基本资料</a></dd>
-                        <dd><a href="javascript:;">修改密码</a></dd>
+                        <dd><a href="person_info.html" target="body">基本资料</a></dd>
+                        <dd><a href="update_password.html" target="body">修改密码</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item ">
@@ -66,10 +66,10 @@
                         系统管理
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">用户管理</a></dd>
-                        <dd><a href="javascript:;">角色管理</a></dd>
+                        <dd><a href="user_list.html" target="body">用户管理</a></dd>
+                        <dd><a href="role_list.html" target="body">角色管理</a></dd>
                         <dd><a href="javascript:;">权限管理</a></dd>
-                        <dd><a href="javascript:;">公告管理</a></dd>
+                        <dd><a href="notice_list.html" target="body">公告管理</a></dd>
                     </dl>
                 </li>
                 <li class="layui-nav-item ">
@@ -78,7 +78,7 @@
                         系统监控
                     </a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">登录日志</a></dd>
+                        <dd><a href="login_log_list.html" target="body">登录日志</a></dd>
                         <dd><a href="javascript:;">操作日志</a></dd>
                     </dl>
                 </li>
@@ -100,8 +100,8 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
-        <div style="padding: 15px;">
-        </div>
+        <iframe name="body" id="body" src="person_info.html" frameborder="0" scrolling="yes"
+                style="width: 100%;height: 100%"></iframe>
     </div>
 
     <div class="layui-footer">

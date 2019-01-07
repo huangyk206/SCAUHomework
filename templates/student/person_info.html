@@ -6,185 +6,139 @@
     <link rel="stylesheet" href="../../static/layui/css/layui.css">
 </head>
 <body class="layui-bg-gray">
-<!--------------------------------------导航栏开始------------------------------------------->
-<div style="position: fixed;left: 0px;right: 0px;z-index: 9999">
-    <div class="layui-bg-black" style="min-height: 60px;padding-left: 90px">
-        <div style="width: 200px;height: 100%;line-height: 60px;text-align: center;color: #009688;font-size: 20px;font-family: Cambria">
-            <strong>SCAU</strong> 作业提交系统
-        </div>
-    </div>
-    <ul class="layui-nav layui-layout-left" lay-filter="layui-header-left" style="left: 305px;right: 0px">
-        <li class="layui-nav-item ">
-            <a href="main.html">主页</a>
-        </li>
-        <li class="layui-nav-item ">
-            <a href="homework_list.html">课程作业</a>
-        </li>
-        <li class="layui-nav-item ">
-            <a href="course_resourse.html">课程资源</a>
-        </li>
-        <li class="layui-nav-item">
-            <a href="about.html">关于</a>
-        </li>
-    </ul>
-    <ul class="layui-nav layui-layout-right" layui-filter="layui-header-right" style="padding-right: 50px;">
-        <li class="layui-nav-item">
-            <a href="person_info.html">
-                <img src="../../static/image/login.jpg" class="layui-nav-img">
-                huangyk
-            </a>
-            <dl class="layui-nav-child" style="text-align: center">
-                <dd><a href="person_info.html">个人中心</a></dd>
-                <dd><a href="update_password.html">修改密码</a></dd>
-                <dd><a href="history_record.html">历史记录</a></dd>
-                <hr>
-                <dd><a href="javascript:;">退出</a></dd>
-            </dl>
-        </li>
-    </ul>
-</div>
-<!--------------------------------------导航栏结束------------------------------------------->
-<div style="position: relative;top:80px;margin-left: 100px;margin-right: 100px">
-    <div style="margin:0 50px 0 50px;padding:10px 20px 10px 20px;min-height: 550px">
-    <!----------------------------------左侧菜单栏开始----------------------------------------->
-    <ul class="layui-nav layui-nav-tree layui-inline" lay-filter="user" style="min-height: 600px;position: absolute;padding-top: 20px">
-        <li class="layui-nav-item layui-this "><a href="person_info.html"> <i class="layui-icon">&#xe612;</i> 个人中心 </a>
-        </li>
-        <li class="layui-nav-item "><a href="update_password.html"> <i class="layui-icon">&#xe673;</i> 修改密码 </a></li>
-        <li class="layui-nav-item "><a href="history_record.html"> <i class="layui-icon">&#xe60a;</i> 历史记录 </a></li>
-    </ul>
-    <!----------------------------------左侧菜单栏结束----------------------------------------->
 
-    <!----------------------------------右侧开始----------------------------------------->
-    <div style="margin-left:215px;min-height: 590px;min-width: 650px;background-color: white;padding-top: 10px">
-        <div class="layui-tab layui-tab-brief" lay-filter="">
-            <ul class="layui-tab-title">
-                <li class="layui-this">我的资料</li>
-                <li>头像</li>
-                <!--<li>密码</li>-->
-            </ul>
-            <div class="layui-tab-content">
-                <div class="layui-tab-item layui-form layui-form-pane layui-show">
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">学号</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="number" id="number" required class="layui-input" disabled value="201525010207" style="cursor: not-allowed !important;">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">姓名</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="name" id="name" required class="layui-input" disabled value="huangyk" style="cursor: not-allowed !important;">
-                        </div>
-                        <input type="radio" name="sex" id="male" value="男" title="男">
-                        <input type="radio" name="sex" id="female" value="女" title="女">
-                    </div>
-                    <!--<div class="layui-form-item">-->
-                    <!--<label class="layui-form-label">性别</label>-->
-                    <!--<div class="layui-input-block">-->
-                    <!--<input type="radio" name="sex" id="male" value="男" title="男">-->
-                    <!--<input type="radio" name="sex" id="female" value="女" title="女">-->
-                    <!--</div>-->
-                    <!--</div>-->
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">昵称</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="nickname" id="nickname" class="layui-input">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">邮箱</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="email" id="email" class="layui-input" lay-verify="email">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <label class="layui-form-label">手机</label>
-                        <div class="layui-input-inline">
-                            <input type="text" name="phone" id="phone" class="layui-input" lay-verify="phone">
-                        </div>
-                    </div>
-                    <div class="layui-form-item">
-                        <button class="layui-btn" lay-submit lay-filter="user-msg-submit">确认修改</button>
+
+<!----------------------------------右侧开始----------------------------------------->
+<div style="margin-left:215px;min-height: 590px;min-width: 650px;background-color: white;padding-top: 10px">
+    <div class="layui-tab layui-tab-brief" lay-filter="">
+        <ul class="layui-tab-title">
+            <li class="layui-this">我的资料</li>
+            <li>头像</li>
+            <!--<li>密码</li>-->
+        </ul>
+        <div class="layui-tab-content">
+            <div class="layui-tab-item layui-form layui-form-pane layui-show">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">学号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="number" id="number" required class="layui-input" disabled
+                               value="201525010207" style="cursor: not-allowed !important;">
                     </div>
                 </div>
-                <div class="layui-tab-item layui-form layui-form-pane">
-                    <div class="layui-form-item">
-                        <div class="layui-bg-gray" style="text-align: center;width: 350px;height: 400px;padding-top: 30px">
-                            <button type="button" class="layui-btn" id="load-img">
-                                <i class="layui-icon">&#xe67c;</i>上传头像
-                            </button>
-                            <p style="margin-top: 10px;opacity: 0.7">支持jpg、png、gif，最大不能超过50KB</p>
-                            <img src="../../static/image/login.jpg" style="width: 200px; height: 200px;margin-top: 30px; border-radius: 100px;">
-                        </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">姓名</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" id="name" required class="layui-input" disabled
+                               value="huangyk" style="cursor: not-allowed !important;">
+                    </div>
+                    <input type="radio" name="sex" id="male" value="男" title="男">
+                    <input type="radio" name="sex" id="female" value="女" title="女">
+                </div>
+                <!--<div class="layui-form-item">-->
+                <!--<label class="layui-form-label">性别</label>-->
+                <!--<div class="layui-input-block">-->
+                <!--<input type="radio" name="sex" id="male" value="男" title="男">-->
+                <!--<input type="radio" name="sex" id="female" value="女" title="女">-->
+                <!--</div>-->
+                <!--</div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">昵称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="nickname" id="nickname" class="layui-input">
                     </div>
                 </div>
-                <!--<div class="layui-tab-item layui-form layui-form-pane">-->
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">原密码</label>-->
-                        <!--<div class="layui-input-inline">-->
-                            <!--<input type="password" name="oldPassword" id="old-password" required class="layui-input">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">新密码</label>-->
-                        <!--<div class="layui-input-inline">-->
-                            <!--<input type="password" name="newPassword" id="new-password" required class="layui-input">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="layui-form-item">-->
-                        <!--<label class="layui-form-label">确认密码</label>-->
-                        <!--<div class="layui-input-inline">-->
-                            <!--<input type="password" name="rePassword" id="re-password" required class="layui-input">-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="layui-form-item">-->
-                        <!--<button class="layui-btn"  lay-submit lay-filter="user-pass-submit">确认修改</button>-->
-                    <!--</div>-->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">邮箱</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="email" id="email" class="layui-input" lay-verify="email">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">手机</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="phone" id="phone" class="layui-input" lay-verify="phone">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn" lay-submit lay-filter="user-msg-submit">确认修改</button>
                 </div>
             </div>
+            <div class="layui-tab-item layui-form layui-form-pane">
+                <div class="layui-form-item">
+                    <div class="layui-bg-gray"
+                         style="text-align: center;width: 350px;height: 400px;padding-top: 30px">
+                        <button type="button" class="layui-btn" id="load-img">
+                            <i class="layui-icon">&#xe67c;</i>上传头像
+                        </button>
+                        <p style="margin-top: 10px;opacity: 0.7">支持jpg、png、gif，最大不能超过50KB</p>
+                        <img src="../../static/image/login.jpg"
+                             style="width: 200px; height: 200px;margin-top: 30px; border-radius: 100px;">
+                    </div>
+                </div>
+            </div>
+            <!--<div class="layui-tab-item layui-form layui-form-pane">-->
+            <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">原密码</label>-->
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="password" name="oldPassword" id="old-password" required class="layui-input">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">新密码</label>-->
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="password" name="newPassword" id="new-password" required class="layui-input">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+            <!--<label class="layui-form-label">确认密码</label>-->
+            <!--<div class="layui-input-inline">-->
+            <!--<input type="password" name="rePassword" id="re-password" required class="layui-input">-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="layui-form-item">-->
+            <!--<button class="layui-btn"  lay-submit lay-filter="user-pass-submit">确认修改</button>-->
+            <!--</div>-->
         </div>
     </div>
-</div>
 </div>
 <!----------------------------------右侧结束----------------------------------------->
 <script src="../../static/layui/layui.js"></script>
 <script>
-    layui.use(['element','form','jquery','upload'], function () {
-        var form=layui.form,
-            $=layui.jquery;
-            upload=layui.upload;
+    layui.use(['element', 'form', 'jquery', 'upload'], function () {
+        var form = layui.form,
+            $ = layui.jquery;
+        upload = layui.upload;
 
         //修改个人信息
-        form.on('submit(user-msg-submit)',function (data) {
+        form.on('submit(user-msg-submit)', function (data) {
             $.ajax({
-                url:'',
-                data:data.field,
-                type:'post',
-                success:function (res) {
+                url: '',
+                data: data.field,
+                type: 'post',
+                success: function (res) {
 
                 }
             });
         });
-        
+
         //上传头像
         upload.render({
-            elem:'#load-img',
-            url:'',
-            done:function (res) {
+            elem: '#load-img',
+            url: '',
+            done: function (res) {
 
             },
-            error:function () {
-                
+            error: function () {
+
             }
         })
         //修改密码
-        form.on('submit(user-pass-submit',function (data) {
+        form.on('submit(user-pass-submit', function (data) {
             $.ajax({
-                url:'',
-                data:data.field,
-                type:'post',
-                success:function (res) {
+                url: '',
+                data: data.field,
+                type: 'post',
+                success: function (res) {
 
                 }
             });
